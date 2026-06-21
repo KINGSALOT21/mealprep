@@ -5,10 +5,6 @@ Enter your stats, goals, and the ingredients you have on hand, and the app gener
 **Live demo:** https://mealprep-1-fzv7.onrender.com/
 
 
-![Meal Prep Planner screenshot](docs/screenshot.png)
-
----
-
 ## What it does
 
 - **AI-generated meal plans** — turns your ingredients and goals into a structured multi-day plan using the Gemini API
