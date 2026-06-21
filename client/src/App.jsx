@@ -49,7 +49,9 @@ export default function App() {
     setPlan(null);
 
     try {
-      const res = await fetch("http://localhost:3001/api/mealplan", {
+      const API_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3001";
+// ...then in handleSubmit:
+const res = await fetch(`${API_URL}/api/mealplan`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ weight, height, age, sex, goal, activity, country, ingredients }),
