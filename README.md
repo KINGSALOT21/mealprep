@@ -68,7 +68,7 @@ This was a focused project to go deep on integrating an LLM into a real applicat
 
 ## Responsible use
 
-This app provides general estimates and meal suggestions for informational purposes only. It is not medical or nutritional advice. Calorie and macro figures are approximations — consult a qualified professional for personalized dietary guidance.
+This app provides general estimates and meal suggestions for informational purposes only. It is not medical or nutritional advice. Calorie and macro figures are approximations. Please consult a doctor pr physician for better services.
 
 ## What's next
 
