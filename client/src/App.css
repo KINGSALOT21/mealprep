@@ -125,3 +125,145 @@ input, select {
   text-align: center;
   line-height: 1.5;
 }
+
+.plan {
+  margin-top: 1.5rem;
+}
+
+.plan-summary {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.summary-item {
+  flex: 1;
+  background: #2d7d5a;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.summary-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.summary-label {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.extras {
+  background: #fff7e6;
+  border: 1px solid #f0d9a8;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #7a5a18;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tab {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #cdd5df;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #3a4654;
+}
+.tab--active {
+  background: #1a2230;
+  color: #fff;
+  border-color: #1a2230;
+}
+
+.day-totals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eef2f6;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+}
+.total-cals {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.macro-pills, .meal-macros {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+.pill--p { background: #e3f0ff; color: #1d5fa8; }
+.pill--c { background: #fff0e0; color: #b06a1a; }
+.pill--f { background: #ffe6ec; color: #b02a4a; }
+.pill--cal { background: #e9e9ef; color: #444; }
+
+.meals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.meal {
+  background: #fff;
+  border: 1px solid #e3e8ee;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.meal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+}
+.meal-name { font-weight: 700; }
+.meal-time { font-size: 0.85rem; color: #8a94a1; }
+.meal-desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #3a4654;
+}
+
+.error {
+  color: #b02a4a;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.cals-compare {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.cals-target {
+  font-size: 0.8rem;
+  color: #8a94a1;
+}
+.cals-ok {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1f7a48;
+}
+.cals-off {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b06a1a;
+}

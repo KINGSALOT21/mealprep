@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import MealPlan from "./MealPlan";
+
+
 
 export default function App() {
   // User stats
@@ -8,6 +11,7 @@ export default function App() {
   const [age, setAge] = useState("");
   const [goal, setGoal] = useState("maintain");
   const [activity, setActivity] = useState("moderate");
+  const [sex, setSex] = useState("male");
 
   // Ingredients
   const [ingredients, setIngredients] = useState([]);
@@ -17,6 +21,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState(null);
   const [error, setError] = useState(null);
+  // Country
+  const [country, setCountry] = useState("");
 
   function addIngredient() {
     const item = ingredientInput.trim();
@@ -46,7 +52,7 @@ export default function App() {
       const res = await fetch("http://localhost:3001/api/mealplan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ weight, height, age, goal, activity, ingredients }),
+        body: JSON.stringify({ weight, height, age, sex, goal, activity, country, ingredients }),
       });
 
       if (!res.ok) throw new Error("Server error");
@@ -103,6 +109,14 @@ export default function App() {
           </label>
 
           <label>
+            Sex
+            <select value={sex} onChange={(e) => setSex(e.target.value)}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+
+          <label>
             Goal
             <select value={goal} onChange={(e) => setGoal(e.target.value)}>
               <option value="cut">Lose weight (cut)</option>
@@ -122,6 +136,16 @@ export default function App() {
           </label>
         </div>
       </section>
+
+          <label>
+                Cuisine / Country
+                <input
+                  type="text"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  placeholder="e.g. Nigerian, Italian, Indian"
+                />
+              </label>
 
       <section className="card">
         <h2>Ingredients you have</h2>
@@ -160,16 +184,7 @@ export default function App() {
 
       {error && <p className="error">{error}</p>}
 
-      {plan && (
-        <section className="card">
-          <h2>Your plan (raw for now)</h2>
-          <p>Daily calories: {plan.dailyCalories}</p>
-          <p>Water: {plan.dailyWaterLiters} L/day</p>
-          <pre style={{ whiteSpace: "pre-wrap", fontSize: "0.8rem" }}>
-            {JSON.stringify(plan.days, null, 2)}
-          </pre>
-        </section>
-      )}
+      {plan && <MealPlan plan={plan} />}
     </div>
   );
 }
